@@ -1,0 +1,17 @@
+{
+    "OwnerInformation": {
+        "fullName": "John Doe",
+        "phoneNumber": " 23-456-789",
+        "email": "ohn@example.com"
+    },
+    "propertyInformation": {
+        "propertyName": "Bina vakeshi",
+        "propertyType": "HOUSE",
+        "featureType": "RENT",
+        "price": 30000,
+        "buildYear": 2015,
+        "location": " Tbilisi Rustavelis 25",
+        "sqArea": 25,
+        "description": "tbili nateli bina vakeshi"
+    }
+}

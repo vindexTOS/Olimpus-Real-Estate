@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.backgroundphoto {
+  background-image: url("./assets/images/olympus-header.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100%;
+}
+
+@font-face {
+  font-family: "Georgian-1";
+  src: url("./assets/fonts/bpg_glaho.ttf");
+}
+
+.font-geo {
+  font-family: "Georgian-1";
+}
+.z-60 {
+  z-index: 60;
+}
+.z-70 {
+  z-index: 70;
+}
+
+.blur {
+  backdrop-filter: blur(
+    5px
+  ); /* Adjust the value for the desired level of blur */
+}
