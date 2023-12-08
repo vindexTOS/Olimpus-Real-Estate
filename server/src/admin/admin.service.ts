@@ -15,7 +15,6 @@ export class AdminService {
       const admin = await this.prismaService.admin.findUnique({
         where: { userName: data.userName, password: data.password },
       });
-      console.log(admin);
       if (!admin)
         throw new HttpException('admin is not Exist', HttpStatus.NOT_FOUND);
       admin.password = null;
