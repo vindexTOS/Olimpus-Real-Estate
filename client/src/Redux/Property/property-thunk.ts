@@ -18,11 +18,8 @@ export const CreatePropertyThunk = createAsyncThunk(
       )
       let propertyId = ''
 
-      // console.log(res.data)
-      // console.log(res)
       if (res.data.property) {
         propertyId = res.data.property[0].id
-        console.log(res.data.property[0].id, 'MUTELI')
       } else {
         propertyId = res.data.id
       }
@@ -31,7 +28,6 @@ export const CreatePropertyThunk = createAsyncThunk(
       return res.data
     } catch (error) {
       const err: any = error
-      console.log(error)
       throw new Error(err.response.data.message)
     }
   },
@@ -57,7 +53,6 @@ export const UploadPhotos = createAsyncThunk(
   async (obj: PhotoPayLoadForRedux) => {
     try {
       const { pictures, propertyId } = obj
-      console.log(obj)
       const formData = new FormData()
       pictures.forEach((file, index) => {
         formData.append(`pictures`, file)
@@ -78,7 +73,6 @@ export const UploadPhotos = createAsyncThunk(
       return res.data
     } catch (error) {
       const err: any = error
-      console.error(error)
       throw new Error(err.response.data.message)
     }
   },
@@ -126,7 +120,7 @@ export const GetAllpropertysThunk = createAsyncThunk(
       if (status) {
         url += `&status=${status}`
       }
-      console.log(url)
+
       const res = await axios.get(url)
       return res.data
     } catch (error) {
