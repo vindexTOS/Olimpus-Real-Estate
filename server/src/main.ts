@@ -4,11 +4,23 @@ import { ValidationPipe } from '@nestjs/common';
 import { NestExpressApplication } from '@nestjs/platform-express';
 
 
-async function bootstrap() {
-  const app = await NestFactory.create<NestExpressApplication>(AppModule);
-  app.enableCors()
-  app.useGlobalPipes(new ValidationPipe());
-  await app.listen(process.env.PORT);
-}
-bootstrap();
+ import { CorsOptions } from '@nestjs/common/interfaces/external/cors-options.interface';
 
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+
+   
+  const corsOptions: CorsOptions = {
+    origin: '*',  
+    methods: 'POST',
+    credentials: true,
+    optionsSuccessStatus: 204,
+  };
+
+  app.enableCors(corsOptions);
+
+  await app.listen(process.env.PORT || 3000);
+}
+
+bootstrap();
